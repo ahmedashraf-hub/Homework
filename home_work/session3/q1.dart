@@ -14,19 +14,28 @@ void main() {
   sumNumbers(num1, num2);
   subtractNumbers(num1, num2);
   multiplyNumbers(num1, num2);
-  print(divisionNumbers(num1, num2).toStringAsFixed(2));
+  print(divisionNumbers(num1, num2));
 }
 
-void sumNumbers(int num1, int num2) {
-  print(num1 + num2);
+void sumNumbers(int num1, int num2, {int num3 = 0}) {
+  print(num1 + num2 + num3);
 }
+
 void subtractNumbers(int num1, int num2) {
   print(num1 - num2);
 }
-void multiplyNumbers(int num1, int num2) {
-  print(num1 * num2);
+
+void multiplyNumbers(int num1, int num2, {int num3 =1}) {
+  print(num1 * num2 * num3);
 }
-double divisionNumbers(int num1, int num2) {
-  double divisionResult = num1/num2;
-  return divisionResult;
+
+double? divisionNumbers(int num1, int num2) {
+  if (num2 != 0) {
+    double divisionResult = num1 / num2;
+    return divisionResult;
+  }
+  else{
+    print('cannot divide by zero.');
+  }
+  return null;
 }
