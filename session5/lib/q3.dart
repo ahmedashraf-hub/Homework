@@ -5,10 +5,9 @@ A year is a leap year if it is divisible by 4 but not divisible by 100, except i
 void main() {
   isLeap(500);
 }
+
 void isLeap(int year) {
-  if (year == 400) {
-    print('$year is leap year.');
-  } else if (year % 4 == 0 && year % 100 != 0) {
+  if ((year % 4 == 0 && year % 100 != 0) || (year == 400)) {
     print('$year is leap year.');
   } else {
     print('$year is not leap year.');

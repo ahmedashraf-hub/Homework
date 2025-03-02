@@ -36,22 +36,32 @@ class Book {
 }
 
 class Library {
-  List<Book> books = [];
+  List<Book> _books = [];
 
   void addBook(Book book) {
-    books.add(book);
+    _books.add(book);
     print('Library after adding is: ${book.title}');
   }
 
   void borrowBook(String isbn) {
-    for (var book in books) {
-      if (book.isbn ==isbn) {
-        if (isb) {
-          
+    for (var book in _books) {
+      if (book.isbn == isbn) {
+        if (book.isAvailable) {
+          book.isAvailable = false;
         } else {
-          
+          print('Book is not available');
         }
-      
+      }
     }
   }
+
+  void returnBook(String isbn) {
+    for (var book in _books) {
+      if (book.isbn == isbn) {
+        book.isAvailable = true;
+      }
+    }
+  }
+
+  void searchByTitle(String title) {}
 }
