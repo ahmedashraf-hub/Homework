@@ -49,7 +49,7 @@ class PhrasesPage extends StatelessWidget {
     ItemModel(
       jpName: 'hai 、ikiba masu.',
       enName: 'yes i am coming.',
-      sound: 'sounds/phrases?yes_im_coming.wav',
+      sound: 'sounds/phrases/yes_im_coming.wav',
     ),
   ];
   @override
