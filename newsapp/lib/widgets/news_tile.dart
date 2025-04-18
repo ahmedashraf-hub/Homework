@@ -19,7 +19,7 @@ class NewsTile extends StatelessWidget {
         ),
         SizedBox(height: 12),
         Text(
-          'Large Title should be places  in this place large',
+          'Large Title should be places  in this place large Large Title should be places  in this place large',
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
@@ -30,7 +30,7 @@ class NewsTile extends StatelessWidget {
         ),
         SizedBox(height: 8),
         Text(
-          'and here is the desciption of the news you can place your ',
+          'and here is the desciption of the news you can place yourand here is the desciption of the news you can place your ',
           maxLines: 2,
           style: TextStyle(color: Colors.grey, fontSize: 14),
         ),

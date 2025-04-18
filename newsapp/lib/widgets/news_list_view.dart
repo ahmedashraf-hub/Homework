@@ -6,15 +6,13 @@ class NewsListView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return ListView.builder(
-      physics: BouncingScrollPhysics(),
-      itemCount: 10,
-      itemBuilder: (context, index) {
+    return SliverList(
+      delegate: SliverChildBuilderDelegate(childCount: 10, (context, index) {
         return Padding(
-          padding: const EdgeInsets.only(bottom: 22),
+          padding: const EdgeInsets.only(bottom: 22.0),
           child: NewsTile(),
         );
-      },
+      }),
     );
   }
 }
