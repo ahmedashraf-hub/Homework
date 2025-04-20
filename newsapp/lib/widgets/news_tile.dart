@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:newsapp/models/article_model.dart';
 
 class NewsTile extends StatelessWidget {
-  const NewsTile({super.key});
+  const NewsTile({super.key, required this.articleModel});
 
+  final ArticleModel articleModel;
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -10,16 +12,24 @@ class NewsTile extends StatelessWidget {
       children: [
         ClipRRect(
           borderRadius: BorderRadius.circular(6),
-          child: Image.network(
-            'https://images.unsplash.com/photo-1506748686214-e9df14d4d9d0',
-            height: 200,
-            width: double.infinity,
-            fit: BoxFit.cover,
-          ),
+          child:
+              articleModel.image != null
+                  ? Image.network(
+                    articleModel.image!,
+                    height: 200,
+                    width: double.infinity,
+                    fit: BoxFit.cover,
+                  )
+                  : Container(
+                    height: 200,
+                    width: double.infinity,
+                    color: Colors.grey[300],
+                    child: Icon(Icons.image, color: Colors.grey[600]),
+                  ),
         ),
         SizedBox(height: 12),
         Text(
-          'Large Title should be places  in this place large Large Title should be places  in this place large',
+          articleModel.title,
           maxLines: 2,
           overflow: TextOverflow.ellipsis,
           style: TextStyle(
@@ -30,7 +40,7 @@ class NewsTile extends StatelessWidget {
         ),
         SizedBox(height: 8),
         Text(
-          'and here is the desciption of the news you can place yourand here is the desciption of the news you can place your ',
+          articleModel.subTitle ?? '',
           maxLines: 2,
           style: TextStyle(color: Colors.grey, fontSize: 14),
         ),

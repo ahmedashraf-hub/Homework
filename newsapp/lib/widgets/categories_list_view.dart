@@ -16,12 +16,13 @@ class CategoriesListView extends StatelessWidget {
     ),
     CategoryModel(
       image: 'assets/images/entertaiment.avif',
-      categoryName: 'Entertaiment',
+      categoryName: 'Entertainment',
     ),
-    CategoryModel(image: 'assets/images/general.avif', categoryName: 'General'),
+
     CategoryModel(image: 'assets/images/health.avif', categoryName: 'Health'),
     CategoryModel(image: 'assets/images/science.avif', categoryName: 'Science'),
     CategoryModel(image: 'assets/images/sports.avif', categoryName: 'sports'),
+    CategoryModel(image: 'assets/images/general.avif', categoryName: 'General'),
   ];
   @override
   Widget build(BuildContext context) {
